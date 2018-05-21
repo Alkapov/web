@@ -1,21 +1,47 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container is-fluid">
 
+  <div class="columns" style="background:aqua">
+    <div class="column is-half "> 
+      <!-- is-three-fifths -->
+      <figure class="image">
+        <img src="../assets/logo.png">
+      </figure>
+    </div>
+    <div class="column">Auto</div>
+    <div class="column">Auto</div>
+  </div>
+
+ <div class="columns" style="background:red">
+    <figure class="image is-5by2">
+   <img src="../assets/slider-img-1.jpg"/>
+   </figure>
+ </div>
+
+ <div class="columns is-variable is-2">
+    <div class="column is-three-quarters" style="background:aqua">is-three-quarters</div>
+    <div class="column" style="background:red">Auto</div>
+    <div class="column" style="background:yellow">Auto</div>
+  </div>
+
+  <div class="column" style="background:yellow">Auto</div>
+  <div class="column" style="background:yellow">Auto</div>
+  <div class="column" style="background:yellow">Auto</div>
+
+
+<div class="notification">
+  This container is
+  <strong>fluid</strong>: it will have a 32px gap on either side, on any viewport size.
+</div>
+</div>
+<footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
 <router-outlet></router-outlet>
