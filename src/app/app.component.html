@@ -1,6 +1,6 @@
-
 <!--<router-outlet></router-outlet>-->
-
+<br>
+<br>
 <div class="columns body-columns">
     <div class="column is-three-quarters is-offset-one-eighth">
 
@@ -12,19 +12,119 @@
             </div>
 
 
-
-
-
             <div class="column is-5 is-offset-1 has-text-right">
                 <p class="title is-3 ">
                     8(800) 555-3535
                 </p>
 
-                    <a class="button is-styled is-rounded">
-                        Оформить заказ
+                <button class="button is-styled is-rounded" (click)="showModal('order')">
+                    Оформить заказ
+                </button>
+            </div>
+        </div>
+
+
+        <div class="card">
+
+            <div class="slideshow-container">
+
+                <div *ngFor="let slide of slides; let i = index" class="fade slide" [class.hidden]="!slide.visible">
+                    <figure class="image is-16by9">
+                        <img src="{{slide.url}}" style="width:100%">
+                        <!--<div class="text">Caption Text</div>-->
+                    </figure>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" (click)="prevSlide()">&#10094;</a>
+                <a class="next" (click)="nextSlide()">&#10095;</a>
+            </div>
+            <div style="text-align:center" class="slider-dots">
+                <span *ngFor="let slide of slides; let i = index" class="dot" (click)="changeSlideTo(i)"
+                      [class.active]="slide.visible"></span>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+
+
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-8 is-shady">
+                <article class="tile is-child notification is-white">
+                    <p class="title">Murphy's law</p>
+                    <p class="subtitle">Anything that can go wrong will go wrong</p>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                            pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                            facilisis.</p>
+                    </div>
+                </article>
+            </div>
+            <div class="tile is-parent is-shady has-text-right">
+                <article class="tile is-child notification is-white">
+                    <!--<p class="title">Main column</p>-->
+                    <!--<p class="subtitle">With some content</p>-->
+                    <!--<div class="content">-->
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu-->
+                    <!--pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat-->
+                    <!--facilisis.</p>-->
+                    <!--</div>-->
+                    <a class="button is-white" style="height: auto!important;">
+                        <figure>
+                            <img src="../assets/awards.png" style="object-fit: cover">
+                            <p class="subtitle is-4">Наши награды</p>
+                        </figure>
                     </a>
+                </article>
             </div>
         </div>
+
+
+        <br/>
+        <br/>
+
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-shady">
+                <article class="tile is-child notification is-white">
+                    <p class="title">Наша команда</p>
+                    <p class="subtitle">Anything that can go wrong will go wrong</p>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                            pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                            facilisis.</p>
+                    </div>
+                </article>
+            </div>
+
+        </div>
+
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Босс</p>
+                    <img src="http://glebradchenko.susu.ru/pic/photo.jpg"
+                         alt="Avatar" style="border-radius: 50%; width:100px; height: 100px; object-fit: cover;">
+                    <p class="title is-4">Глеб<br/>Радченко</p>
+                </div>
+            </div>
+
+
+        </nav>
+
+
+        <br/>
+        <br/>
+
+
+        <div id="map" style="width: 100%; height: 400px;"></div>
+
+        <br/>
+        <br/>
+
+
 
         <div class="card">
             <div class="header">
@@ -92,145 +192,6 @@
                 </div>
             </div>
         </div>
-
-
-        <div class="card">
-            <div class="header">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="https://source.unsplash.com/random/96x96" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">John Smith</p>
-                        <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="https://source.unsplash.com/random/1280x960" alt="Placeholder image">
-                </figure>
-            </div>
-            <div class="card-content">
-                <div class="level is-mobile">
-                    <div class="level-left">
-                        <div class="level-item has-text-centered">
-                            <a href="">
-                                <i class="material-icons">favorite_border</i>
-                            </a>
-                        </div>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <a href="">
-                                    <i class="material-icons">chat_bubble_outline</i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <p>
-                        <strong>32 Likes</strong>
-                    </p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                    <a>@bulmaio</a>.
-                    <a href="#">#css</a>
-                    <a href="#">#responsive</a>
-                    <br>
-                    <time datetime="2018-1-1">11:09 PM - 1 Jan 2018</time>
-                </div>
-            </div>
-            <div class="card-footer">
-                <div class="columns is-mobile">
-                    <div class="column is-11">
-                        <div class="field">
-                            <div class="control">
-                                <input class="input is-medium" type="text" placeholder="Add a comment . . .">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column has-text-centered">
-                        <button class="button">
-                            <i class="material-icons">more_horiz</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="card">
-            <div class="header">
-                <div class="media">
-                    <div class="media-left">
-                        <figure class="image is-48x48">
-                            <img src="https://source.unsplash.com/random/96x96" alt="Placeholder image">
-                        </figure>
-                    </div>
-                    <div class="media-content">
-                        <p class="title is-4">John Smith</p>
-                        <p class="subtitle is-6">@johnsmith</p>
-                    </div>
-                </div>
-            </div>
-            <div class="card-image">
-                <figure class="image is-4by3">
-                    <img src="https://source.unsplash.com/random/1280x960" alt="Placeholder image">
-                </figure>
-            </div>
-            <div class="card-content">
-                <div class="level is-mobile">
-                    <div class="level-left">
-                        <div class="level-item has-text-centered">
-                            <a href="">
-                                <i class="material-icons">favorite_border</i>
-                            </a>
-                        </div>
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <a href="">
-                                    <i class="material-icons">chat_bubble_outline</i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="content">
-                    <p>
-                        <strong>32 Likes</strong>
-                    </p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
-                    <a>@bulmaio</a>.
-                    <a href="#">#css</a>
-                    <a href="#">#responsive</a>
-                    <br>
-                    <time datetime="2018-1-1">12:02 PM - 1 May 2018</time>
-                </div>
-            </div>
-            <div class="card-footer">
-                <div class="columns is-mobile">
-                    <div class="column is-11">
-                        <div class="field">
-                            <div class="control">
-                                <input class="input is-medium" type="text" placeholder="Add a comment . . .">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column has-text-centered">
-                        <button class="button">
-                            <i class="material-icons">more_horiz</i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
 
 
         <footer class="footer">
@@ -239,7 +200,8 @@
                     <p>
                         <strong>Bulma</strong> by
                         <a href="http://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is
+                        licensed
                         <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
                     </p>
                 </div>
@@ -248,46 +210,152 @@
     </div>
 </div>
 
+<div class="modal" [class.is-active]="isModalActive('order')">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Modal title</p>
+            <button class="delete" aria-label="close" (click)="closeModal()"></button>
+        </header>
+        <section class="modal-card-body">
 
 
-<section class="container">
-
-    <div class="container has-text-centered">
-        <div class="columns is-vcentered">
-            <div class="column is-5">
-                <figure class="image">
-                     <img src="../assets/logo.png">
-                </figure>
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Text input">
+                </div>
             </div>
-            <div class="column is-6 is-offset-1">
-                <h1 class="title is-2">
-                    Superhero Scaffolding
-                </h1>
-                <h2 class="subtitle is-4">
-                    Let this cover page describe a product or service.
 
-                </h2>
-                <br>
-                <p class="has-text-centered">
-                    <a class="button is-medium is-info is-outlined">
-                        Learn more
-                    </a>
-                </p>
+            <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+                    <span class="icon is-small is-left">
+      <i class="fas fa-user"></i>
+    </span>
+                    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+                </div>
+                <p class="help is-success">This username is available</p>
             </div>
-        </div>
+
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+                    <span class="icon is-small is-right">
+      <i class="fas fa-exclamation-triangle"></i>
+    </span>
+                </div>
+                <p class="help is-danger">This email is invalid</p>
+            </div>
+
+            <div class="field">
+                <label class="label">Subject</label>
+                <div class="control">
+                    <div class="select">
+                        <select>
+                            <option>Select dropdown</option>
+                            <option>With options</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                    <textarea class="textarea" placeholder="Textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        I agree to the <a href="#">terms and conditions</a>
+                    </label>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <label class="radio">
+                        <input type="radio" name="question">
+                        Yes
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="question">
+                        No
+                    </label>
+                </div>
+            </div>
+
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-link">Submit</button>
+                </div>
+                <div class="control">
+                    <button class="button is-text" (click)="closeModal()">Cancel</button>
+                </div>
+            </div>
+
+
+        </section>
     </div>
 
-    <button (click)="showModal('awards')">rewards</button>
-    <div class="modal" [class.is-active]="isModalActive('awards')">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-            <p class="image is-4by3">
-                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="">
-            </p>
-        </div>
-        <button class="modal-close is-large" aria-label="close" (click)="closeModal()"></button>
-    </div>
-</section>
-<footer class="footer">
-    asd
-</footer>
+</div>
+<!--<div class="modal-background"></div>-->
+<!--<div class="modal-content">-->
+<!--<p class="image is-4by3">-->
+<!--<img src="https://bulma.io/images/placeholders/1280x960.png" alt="">-->
+<!--</p>-->
+<!--</div>-->
+<!--<button class="modal-close is-large" aria-label="close" (click)="closeModal()"></button>-->
+
+<!--<section class="container">-->
+
+<!--<div class="container has-text-centered">-->
+<!--<div class="columns is-vcentered">-->
+<!--<div class="column is-5">-->
+<!--<figure class="image">-->
+<!--<img src="../assets/logo.png">-->
+<!--</figure>-->
+<!--</div>-->
+<!--<div class="column is-6 is-offset-1">-->
+<!--<h1 class="title is-2">-->
+<!--Superhero Scaffolding-->
+<!--</h1>-->
+<!--<h2 class="subtitle is-4">-->
+<!--Let this cover page describe a product or service.-->
+
+<!--</h2>-->
+<!--<br>-->
+<!--<p class="has-text-centered">-->
+<!--<a class="button is-medium is-info is-outlined">-->
+<!--Learn more-->
+<!--</a>-->
+<!--</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<button (click)="showModal('awards')">rewards</button>-->
+<!--<div class="modal" [class.is-active]="isModalActive('awards')">-->
+<!--<div class="modal-background"></div>-->
+<!--<div class="modal-content">-->
+<!--<p class="image is-4by3">-->
+<!--<img src="https://bulma.io/images/placeholders/1280x960.png" alt="">-->
+<!--</p>-->
+<!--</div>-->
+<!--<button class="modal-close is-large" aria-label="close" (click)="closeModal()"></button>-->
+<!--</div>-->
+<!--</section>-->
+<!--<footer class="footer">-->
+<!--asd-->
+<!--</footer>-->
