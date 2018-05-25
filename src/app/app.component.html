@@ -24,18 +24,16 @@
         </div>
 
 
-        <div class="card">
+        <div class="card" style="border-radius: 10px;">
 
             <div class="slideshow-container">
 
                 <div *ngFor="let slide of slides; let i = index" class="fade slide" [class.hidden]="!slide.visible">
                     <figure class="image is-16by9">
-                        <img src="{{slide.url}}" style="width:100%">
-                        <!--<div class="text">Caption Text</div>-->
+                        <img src="{{slide.url}}" style="width:100%; border-radius: 10px;">
                     </figure>
                 </div>
 
-                <!-- Next and previous buttons -->
                 <a class="prev" (click)="prevSlide()">&#10094;</a>
                 <a class="next" (click)="nextSlide()">&#10095;</a>
             </div>
@@ -49,30 +47,22 @@
         <br/>
 
 
-
         <div class="tile is-ancestor">
             <div class="tile is-parent is-8 is-shady">
                 <article class="tile is-child notification is-white">
-                    <p class="title">Murphy's law</p>
-                    <p class="subtitle">Anything that can go wrong will go wrong</p>
+                    <p class="title">О компании</p>
+                    <p class="subtitle "><a class="super-link" (click)="showModal('portfolio')">Познакомьтесь с нашими работами</a></p>
                     <div class="content">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
                             pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
                             facilisis.</p>
                     </div>
-                    <a> Portfolio</a>
+
                 </article>
             </div>
             <div class="tile is-parent is-shady has-text-right">
                 <article class="tile is-child notification is-white">
-                    <!--<p class="title">Main column</p>-->
-                    <!--<p class="subtitle">With some content</p>-->
-                    <!--<div class="content">-->
-                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu-->
-                    <!--pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat-->
-                    <!--facilisis.</p>-->
-                    <!--</div>-->
-                    <a class="button is-white" style="height: auto!important;">
+                    <a class="button is-white" (click)="showModal('awards')" style="height: auto!important;">
                         <figure>
                             <img src="../assets/awards.png" style="object-fit: cover">
                             <p class="subtitle is-4">Наши награды</p>
@@ -122,7 +112,7 @@
         <br/>
 
 
-        <div id="map" style="width: 100%; height: 400px;"></div>
+        <div id="map" style="width: 100%; height: 400px; border-radius: 10px;"></div>
 
         <br/>
         <br/>
@@ -132,7 +122,8 @@
             <div class="container is-fluid">
                 <div class="content has-text-centered">
                     <p>
-                        <strong>Интерьер++</strong> © {{ currentDate <= 2018 ? "": "2018 - " }}{{currentDate}} | Designed by Alkapov
+                        <strong>Интерьер++</strong> © {{ currentDate <= 2018 ? "": "2018 - " }}{{currentDate}} |
+                        Designed by Alkapov
 
                     </p>
                 </div>
@@ -144,100 +135,139 @@
 <div class="modal" [class.is-active]="isModalActive('order')">
     <div class="modal-background"></div>
     <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title">Modal title</p>
-            <button class="delete" aria-label="close" (click)="closeModal()"></button>
-        </header>
-        <section class="modal-card-body">
 
+        <section class="box">
 
-            <div class="field">
-                <label class="label">Name</label>
-                <div class="control">
-                    <input class="input" type="text" placeholder="Text input">
-                </div>
-            </div>
+            <p class="title is-2">Оформите заказ</p>
+            <p class="subtitle is-5">Оставьте ваши контактные данные и пожелания. Наш специалист в скором времени свяжется с Вами.</p>
 
-            <div class="field">
-                <label class="label">Username</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input is-success" type="text" placeholder="Text input" value="bulma">
-                    <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-                    <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
-                </div>
-                <p class="help is-success">This username is available</p>
-            </div>
-
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-                    <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-                    <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
-                </div>
-                <p class="help is-danger">This email is invalid</p>
-            </div>
-
-            <div class="field">
-                <label class="label">Subject</label>
-                <div class="control">
-                    <div class="select">
-                        <select>
-                            <option>Select dropdown</option>
-                            <option>With options</option>
-                        </select>
+            <form>
+                <div class="field">
+                    <label class="label">Имя</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Как к Вам можно обращаться?" required>
                     </div>
                 </div>
-            </div>
 
-            <div class="field">
-                <label class="label">Message</label>
-                <div class="control">
-                    <textarea class="textarea" placeholder="Textarea"></textarea>
+                <div class="field">
+                    <label class="label">Телефон</label>
+                    <div class="control">
+                        <input class="input" type="tel" placeholder="Специалист позвонит Вам на данный номер" required>
+                    </div>
                 </div>
-            </div>
 
-            <div class="field">
-                <div class="control">
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        I agree to the <a href="#">terms and conditions</a>
-                    </label>
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="Информация о заказе будет отправлена Вам на почту" required>
+                    </div>
                 </div>
-            </div>
 
-            <div class="field">
-                <div class="control">
-                    <label class="radio">
-                        <input type="radio" name="question">
-                        Yes
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="question">
-                        No
-                    </label>
+                <div class="field">
+                    <label class="label">Пожелания</label>
+                    <div class="control">
+                        <textarea class="textarea" placeholder="Все, что Вы думаете было бы полезно для нас"></textarea>
+                    </div>
                 </div>
-            </div>
+                <div class="field is-grouped" style="float: right">
+                    <div class="control">
+                        <button class="button is-link">Отправить</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-text" (click)="closeModal()">Отменить</button>
+                    </div>
+                </div>
 
-            <div class="field is-grouped">
-                <div class="control">
-                    <button class="button is-link">Submit</button>
-                </div>
-                <div class="control">
-                    <button class="button is-text" (click)="closeModal()">Cancel</button>
-                </div>
-            </div>
 
+            </form>
 
         </section>
     </div>
+    <button class="modal-close is-large" (click)="closeModal()" aria-label="close"></button>
+</div>
 
+<div class="modal" [class.is-active]="isModalActive('awards')">
+    <div class="modal-background"></div>
+    <div class="modal-content full">
+        <div class="box">
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-10 is-shady">
+                    <article class="tile is-child notification is-white">
+                        <p class="title">Main column</p>
+                        <p class="subtitle">With some content</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-10 is-shady">
+                    <article class="tile is-child notification is-white">
+                        <p class="title">Main column</p>
+                        <p class="subtitle">With some content</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-10 is-shady">
+                    <article class="tile is-child notification is-white">
+                        <p class="title">Main column</p>
+                        <p class="subtitle">With some content</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-10 is-shady">
+                    <article class="tile is-child notification is-white">
+                        <p class="title">Main column</p>
+                        <p class="subtitle">With some content</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <button class="modal-close is-large" (click)="closeModal()" aria-label="close"></button>
+</div>
+
+<div class="modal" [class.is-active]="isModalActive('portfolio')">
+    <div class="modal-background"></div>
+    <div class="modal-content full">
+        <div class="box">
+
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-shady">
+                    <article class="tile is-child notification is-white">
+                       <figure class="image">
+                           <img src="https://source.unsplash.com/random/1280x960" style="object-fit: cover; height: 200px; width: 200px; border-radius: 10px;"/>
+                       </figure>
+                    </article>
+                </div>
+                <div class="tile is-parent is-9 is-shady">
+                    <article class="tile is-child notification is-white">
+                        <p class="title">Main column</p>
+                        <p class="subtitle">With some content</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <button class="modal-close is-large" (click)="closeModal()" aria-label="close"></button>
 </div>
