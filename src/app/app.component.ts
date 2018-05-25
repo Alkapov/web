@@ -30,6 +30,10 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.loadSlide();
         this.activateSlider();
+        this.loadMap();
+    }
+
+    private loadMap() {
         DG.then(function () {
             const map = DG.map('map', {
                 center: [54.98, 82.89],
@@ -74,6 +78,10 @@ export class AppComponent implements OnInit {
     changeSlideTo(index: number) {
         this.slides.forEach(value => value.visible = false);
         this.slides[index].visible = true;
+    }
+
+    get currentDate() {
+        return (new Date()).getFullYear();
     }
 }
 
