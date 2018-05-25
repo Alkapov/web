@@ -191,69 +191,11 @@
     <div class="modal-content full">
         <div class="box">
             <div class="tile is-ancestor">
-                <div class="tile is-parent is-10 is-shady">
-                    <article class="tile is-child notification is-white">
-                        <p class="title">Main column</p>
-                        <p class="subtitle">With some content</p>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                        </div>
-                    </article>
-                </div>
-
-            </div>
-            <div class="tile is-ancestor">
-                <div class="tile is-parent is-10 is-shady">
-                    <article class="tile is-child notification is-white">
-                        <p class="title">Main column</p>
-                        <p class="subtitle">With some content</p>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                        </div>
-                    </article>
-                </div>
-
-            </div>
-            <div class="tile is-ancestor">
-                <div class="tile is-parent is-10 is-shady">
-                    <article class="tile is-child notification is-white">
-                        <p class="title">Main column</p>
-                        <p class="subtitle">With some content</p>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                        </div>
-                    </article>
-                </div>
-
-            </div>
-            <div class="tile is-ancestor">
-                <div class="tile is-parent is-10 is-shady">
-                    <article class="tile is-child notification is-white">
-                        <p class="title">Main column</p>
-                        <p class="subtitle">With some content</p>
-                        <div class="content">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
-                        </div>
-                    </article>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <button class="modal-close is-large" (click)="closeModal()" aria-label="close"></button>
-</div>
-
-<div class="modal" [class.is-active]="isModalActive('portfolio')">
-    <div class="modal-background"></div>
-    <div class="modal-content full">
-        <div class="box">
-
-            <div class="tile is-ancestor">
                 <div class="tile is-parent is-shady">
                     <article class="tile is-child notification is-white">
-                       <figure class="image">
-                           <img src="https://source.unsplash.com/random/1280x960" style="object-fit: cover; height: 200px; width: 200px; border-radius: 10px;"/>
-                       </figure>
+                        <figure class="image">
+                            <img src="https://source.unsplash.com/random/1280x960" style="object-fit: cover; height: 200px; width: 200px; border-radius: 10px;"/>
+                        </figure>
                     </article>
                 </div>
                 <div class="tile is-parent is-9 is-shady">
@@ -268,6 +210,33 @@
             </div>
 
         </div>
+    </div>
+    <button class="modal-close is-large" (click)="closeModal()" aria-label="close"></button>
+</div>
+
+<div class="modal" [class.is-active]="isModalActive('portfolio')">
+    <div class="modal-background"></div>
+    <div class="modal-content full">
+        <section class="box">
+
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-shady">
+                    <article class="tile is-child notification is-white">
+                        <figure class="image is-3by1">
+                            <img src="../assets/portfolio-img-1.jpg" style="border-radius: 10px; object-fit: cover;"/>
+                        </figure>
+                        <p class="title">Main column</p>
+                        <p class="subtitle">With some content</p>
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+
+
+        </section>
     </div>
     <button class="modal-close is-large" (click)="closeModal()" aria-label="close"></button>
 </div>

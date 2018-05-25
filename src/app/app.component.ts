@@ -10,8 +10,8 @@ declare var DG: any;
 })
 export class AppComponent implements OnInit {
     title = 'app';
-    slides = [new Slide('https://source.unsplash.com/random/1280x960'),
-        new Slide('https://source.unsplash.com/random/1280x960')];
+    slides = [new Slide('../assets/slider-img-1.jpg'),
+        new Slide('../assets/slider-img-2.jpg')];
     activeModal: string = null;
 
 
