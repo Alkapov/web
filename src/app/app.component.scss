@@ -1,0 +1,31 @@
+.column.is-offset-one-eighth {
+  margin-left: 12.5%;
+}
+
+.button.is-styled {
+  background-color: #FF1A36;
+  border-color: transparent;
+  color: #fff;
+  font-weight: bold;
+}
+
+.button.is-styled:hover, .button.is-primary.is-hovered {
+  background-color: #e51730;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-styled:focus, .button.is-primary.is-focused {
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-styled:focus:not(:active), .button.is-primary.is-focused:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(204, 21, 43, 0.25);
+}
+
+.button.is-styled:active, .button.is-primary.is-active {
+  background-color: #cc152b;
+  border-color: transparent;
+  color: #fff;
+}
