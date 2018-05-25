@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  activeModal: string = null;
+  closeModal() {
+    this.activeModal = null;
+  }
+  showModal(name: string) {
+    this.activeModal = name;
+  }
+  isModalActive(name: string): boolean {
+    return this.activeModal === name;
+  }
 }
+
